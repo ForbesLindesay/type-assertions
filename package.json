@@ -1,0 +1,32 @@
+{
+  "name": "type-assertions",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ForbesLindesay/type-assertions.git"
+  },
+  "scripts": {
+    "clean": "rimraf lib",
+    "prebuild": "yarn clean",
+    "build": "tsc",
+    "build:watch": "yarn build -w",
+    "postbuild": "rimraf lib/test.*",
+    "precommit": "pretty-quick --staged",
+    "prepush": "yarn prettier:diff",
+    "prettier": "prettier --ignore-path .gitignore --write './**/*.{js,jsx,ts,tsx}'",
+    "prettier:diff": "prettier --ignore-path .gitignore --list-different './**/*.{js,jsx,ts,tsx}'",
+    "ci:test": "yarn prettier:diff"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "prettier": "^1.13.7",
+    "pretty-quick": "^1.6.0",
+    "rimraf": "^2.6.2",
+    "typescript": "^3.1.1"
+  }
+}
