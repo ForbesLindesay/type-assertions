@@ -27,3 +27,6 @@ export type t6 = ta.Assert<
 >;
 export const t7: ta.UnionIncludesExact<number, 'hello'> = false;
 export type t7 = ta.Assert<ta.Not<ta.UnionIncludesExact<number, 'hello'>>>;
+
+ta.assert<true>();
+ta.assert<ta.Not<false>>();
