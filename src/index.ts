@@ -2,6 +2,9 @@
  * assert that a type is exactly `true`
  */
 export type Assert<T extends true> = T;
+export function assert<T extends true>(): T {
+  return true as T;
+}
 
 /**
  * convert all types that are not `true` to `false`
